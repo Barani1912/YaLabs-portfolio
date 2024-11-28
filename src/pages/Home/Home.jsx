@@ -9,7 +9,7 @@ const Home = () => {
   return (
     <>
     
-    <div className="px-4 pb-4">
+    <div className="px-4">
 
       <div className="flex flex-wrap gap-14 pl-14 pr-10 pb-20"  >
         <div className="flex-1 text-center sm:text-left " data-aos="fade-up" data-aos-duration="700" data-aos-delay="50">
