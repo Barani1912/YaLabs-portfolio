@@ -5,14 +5,13 @@ import Typography from "@mui/material/Typography";
 import { gsap } from "gsap";
 import { CiSettings } from "react-icons/ci";
 
-
 const Services = () => {
   return (
     <div className=" pb-16 px-6">
       <div className="text-center" data-aos="fade-up">
         <h2
-          onMouseEnter={() => gsap.to("#cursor", { scale: 6, duration: 0.3 })}
-          onMouseLeave={() => gsap.to("#cursor", { scale: 1, duration: 0.3 })}
+          onMouseEnter={() => gsap.to("#cursor1", { scale: 6, duration: 0.3 })}
+          onMouseLeave={() => gsap.to("#cursor1", { scale: 1, duration: 0.3 })}
           className=" text-2xl sm:text-4xl font-bold inline"
         >
           Services
@@ -195,8 +194,8 @@ const Services = () => {
 
       <div className="text-center mb-20" data-aos="fade-up">
         <h2
-          onMouseEnter={() => gsap.to("#cursor", { scale: 6, duration: 0.3 })}
-          onMouseLeave={() => gsap.to("#cursor", { scale: 1, duration: 0.3 })}
+          onMouseEnter={() => gsap.to("#cursor1", { scale: 6, duration: 0.3 })}
+          onMouseLeave={() => gsap.to("#cursor1", { scale: 1, duration: 0.3 })}
           className=" text-2xl sm:text-4xl font-bold inline"
         >
           How
@@ -242,29 +241,52 @@ const Services = () => {
 
       <div className="flex flex-col items-center gap-10">
         <div className="flex flex-col gap-10">
-          <div data-aos="fade-up" className="flex items-center gap-2 pb-4 border-b-4 border-sky-600">
+          <div
+            data-aos="fade-up"
+            className="flex items-center gap-2 pb-4 border-b-4 border-sky-600"
+          >
             <CiSettings className="text-blue-500 text-4xl" />
-            <span >Design & Planning</span>
+            <span>Design & Planning</span>
           </div>
-          <div data-aos="fade-up" data-aos-duration="600" className="flex items-center gap-2 pb-4 border-b-4 border-sky-600">
+          <div
+            data-aos="fade-up"
+            data-aos-duration="600"
+            className="flex items-center gap-2 pb-4 border-b-4 border-sky-600"
+          >
             <CiSettings className="text-blue-500 text-4xl" />
-            <span >Prototype</span>
+            <span>Prototype</span>
           </div>
-          <div data-aos="fade-up" data-aos-duration="800" className="flex items-center gap-2 pb-4 border-b-4 border-sky-600">
+          <div
+            data-aos="fade-up"
+            data-aos-duration="800"
+            className="flex items-center gap-2 pb-4 border-b-4 border-sky-600"
+          >
             <CiSettings className="text-blue-500 text-4xl" />
-            <span >Development</span>
+            <span>Development</span>
           </div>
-          <div data-aos="fade-up" data-aos-duration="1200" className="flex items-center gap-2 pb-4 border-b-4 border-sky-600">
+          <div
+            data-aos="fade-up"
+            data-aos-duration="1200"
+            className="flex items-center gap-2 pb-4 border-b-4 border-sky-600"
+          >
             <CiSettings className="text-blue-500 text-4xl" />
-            <span >Testing</span>
+            <span>Testing</span>
           </div>
-          <div data-aos="fade-up" data-aos-duration="1600" className="flex items-center gap-2 pb-4 border-b-4 border-sky-600">
+          <div
+            data-aos="fade-up"
+            data-aos-duration="1600"
+            className="flex items-center gap-2 pb-4 border-b-4 border-sky-600"
+          >
             <CiSettings className="text-blue-500 text-4xl" />
-            <span >Deployment</span>
+            <span>Deployment</span>
           </div>
-          <div data-aos="fade-up" data-aos-duration="2000" className="flex items-center gap-2 pb-4 border-b-4 border-sky-600">
+          <div
+            data-aos="fade-up"
+            data-aos-duration="2000"
+            className="flex items-center gap-2 pb-4 border-b-4 border-sky-600"
+          >
             <CiSettings className="text-blue-500 text-4xl" />
-            <span >Maintenance</span>
+            <span>Maintenance</span>
           </div>
         </div>
       </div>

@@ -1,14 +1,14 @@
 import React from "react";
 import CardForVissionMission from "./Card-V-M";
-import {gsap }from 'gsap';
+import { gsap } from "gsap";
 
 const AboutUs = () => {
   return (
     <>
       <div className="text-center" data-aos="fade-up">
         <h2
-          onMouseEnter={() => gsap.to("#cursor", { scale: 6, duration: 0.3 })}
-          onMouseLeave={() => gsap.to("#cursor", { scale: 1, duration: 0.3 })}
+          onMouseEnter={() => gsap.to("#cursor1", { scale: 6, duration: 0.3 })}
+          onMouseLeave={() => gsap.to("#cursor1", { scale: 1, duration: 0.3 })}
           className=" text-2xl sm:text-4xl font-bold inline"
         >
           Why
@@ -99,10 +99,10 @@ const AboutUs = () => {
         </div>
       </div>
 
-      <div data-aos="fade-up" className="text-center" >
+      <div data-aos="fade-up" className="text-center">
         <h2
-          onMouseEnter={() => gsap.to("#cursor", { scale: 6, duration: 0.3 })}
-          onMouseLeave={() => gsap.to("#cursor", { scale: 1, duration: 0.3 })}
+          onMouseEnter={() => gsap.to("#cursor1", { scale: 6, duration: 0.3 })}
+          onMouseLeave={() => gsap.to("#cursor1", { scale: 1, duration: 0.3 })}
           className=" text-2xl sm:text-4xl font-bold inline"
         >
           Who
@@ -126,17 +126,13 @@ const AboutUs = () => {
             </p>
           </div>
 
-          <CardForVissionMission  />
+          <CardForVissionMission />
 
-          <button className="px-6 py-3 mb-14 bg-sky-600 text-white text-lg font-semibold rounded-md hover:bg-white hover:text-sky-600 hover:border-2 transition duration-300">
+          <button className="px-6 py-3 mb-14 drop-shadow-2xl bg-sky-600 text-white text-lg font-semibold rounded-md hover:bg-white hover:text-sky-600  transition duration-300">
             Get in Touch
           </button>
-         
-
         </div>
       </div>
-
-
     </>
   );
 };
