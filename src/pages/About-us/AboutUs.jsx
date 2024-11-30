@@ -1,11 +1,11 @@
 import React from "react";
-import CardForVissionMission from "./Card-V-M";
+import CardForVissionMission from "./CardForVisionMission";
 import { gsap } from "gsap";
 
 const AboutUs = () => {
   return (
     <>
-      <div className="text-center" data-aos="fade-up">
+      <div className="text-center px-2" data-aos="fade-up">
         <h2
           onMouseEnter={() => gsap.to("#cursor1", { scale: 6, duration: 0.3 })}
           onMouseLeave={() => gsap.to("#cursor1", { scale: 1, duration: 0.3 })}
@@ -128,7 +128,7 @@ const AboutUs = () => {
 
           <CardForVissionMission />
 
-          <button className="px-6 py-3 mb-14 drop-shadow-2xl bg-sky-600 text-white text-lg font-semibold rounded-md hover:bg-white hover:text-sky-600  transition duration-300">
+          <button data-aos="fade-up" data-aos-duration="1200" className="px-6 py-3 mb-14 drop-shadow-2xl bg-sky-600 text-white text-lg font-semibold rounded-md hover:bg-white hover:text-sky-600  transition duration-300">
             Get in Touch
           </button>
         </div>

@@ -1,17 +1,20 @@
-import React, { useEffect, useState , useRef } from "react";
+import "./App.css";
+import React, { useEffect, useState, useRef } from "react";
+
 import { HiMenu } from "react-icons/hi";
-import { FaChevronUp } from "react-icons/fa";
+import { FaChevronUp, FaTimes } from "react-icons/fa";
 import { FaFacebook } from "react-icons/fa6";
 import { FaXTwitter } from "react-icons/fa6";
 import { FaLinkedin } from "react-icons/fa";
 import { RiInstagramFill } from "react-icons/ri";
-import { Link, animateScroll as scroll } from "react-scroll";
-import "./App.css";
+
 import Home from "./pages/Home/Home";
 import Services from "./pages/Services/Services";
 import Contact from "./pages/Contact-us/Contact";
 import AboutUs from "./pages/About-us/AboutUs";
 import Cursor from "./components/Cursor";
+
+import { Link, animateScroll as scroll } from "react-scroll";
 import AOS from "aos";
 import "aos/dist/aos.css";
 AOS.init();
@@ -20,27 +23,25 @@ const App = () => {
   const [isVisible, setIsVisible] = useState(false);
   const [offset, setOffset] = useState(0);
   const [direction, setDirection] = useState(1);
+  const [drawerOpen, setDrawerOpen] = useState(false);
   const iconRef = useRef(null);
 
-  // Track scroll position
   const handleScroll = () => {
-    // Check if the page has been scrolled down 80% of the viewport height
     if (window.scrollY > window.innerHeight * 0.8) {
-      setIsVisible(true); // Show button
+      setIsVisible(true);
     } else {
-      setIsVisible(false); // Hide button
+      setIsVisible(false);
     }
   };
 
   useEffect(() => {
-    window.addEventListener("scroll", handleScroll); // Add scroll event listener
+    window.addEventListener("scroll", handleScroll);
 
     return () => {
-      window.removeEventListener("scroll", handleScroll); // Clean up listener on unmount
+      window.removeEventListener("scroll", handleScroll);
     };
   }, []);
 
-  // Animation logic for moving the icon up and down
   useEffect(() => {
     const interval = setInterval(() => {
       setOffset((prev) => {
@@ -50,13 +51,15 @@ const App = () => {
       });
     }, 50);
 
-    return () => clearInterval(interval); // Cleanup on unmount
+    return () => clearInterval(interval);
   }, [direction]);
-
-
 
   const scrollToTop = () => {
     scroll.scrollToTop();
+  };
+
+  const toggleDrawer = () => {
+    setDrawerOpen(!drawerOpen);
   };
 
   return (
@@ -116,25 +119,95 @@ const App = () => {
             </div>
 
             <div className="lg:hidden">
-              <HiMenu className="text-gray-800 text-3xl cursor-pointer" />
+              <HiMenu
+                className="text-gray-800 text-3xl cursor-pointer"
+                onClick={toggleDrawer}
+              />
             </div>
           </div>
         </nav>
       </header>
 
-      <section id="home" className="min-h-screen bg-white pt-[17vh] mt-[6vh] ">
+      {drawerOpen && (
+        <div
+          className="fixed top-0 left-0 w-full h-full bg-white z-50 flex justify-center items-center"
+          style={{ zIndex: 999 }}
+        >
+          <div className="w-9/12 h-9/12 bg-gray-100 shadow-lg rounded-md relative">
+            <div
+              className="absolute top-4 right-4 cursor-pointer"
+              onClick={toggleDrawer}
+            >
+              <FaTimes className="text-xl text-gray-800" />
+            </div>
+
+            <div className="flex flex-col items-center justify-center h-full">
+              <Link
+                to="home"
+                smooth={true}
+                duration={500}
+                spy={true}
+                offset={-71}
+                activeClass="text-blue-500 font-bold"
+                className="text-xl cursor-pointer py-4"
+                onClick={toggleDrawer}
+              >
+                Home
+              </Link>
+              <Link
+                to="about-us"
+                smooth={true}
+                duration={500}
+                spy={true}
+                offset={-71}
+                activeClass="text-blue-500 font-bold"
+                className="text-xl cursor-pointer py-4"
+                onClick={toggleDrawer}
+              >
+                About Us
+              </Link>
+              <Link
+                to="services"
+                smooth={true}
+                duration={500}
+                spy={true}
+                offset={-70}
+                activeClass="text-blue-500 font-bold"
+                className="text-xl cursor-pointer py-4"
+                onClick={toggleDrawer}
+              >
+                Services
+              </Link>
+              <Link
+                to="contact-us"
+                smooth={true}
+                duration={500}
+                spy={true}
+                offset={-70}
+                activeClass="text-blue-500 font-bold"
+                className="text-xl cursor-pointer py-4"
+                onClick={toggleDrawer}
+              >
+                Contact Us
+              </Link>
+            </div>
+          </div>
+        </div>
+      )}
+
+      <section id="home" className="min-h-screen bg-white pt-[17vh] mt-[6vh]">
         <Home />
         <Cursor />
       </section>
 
       <section
         id="about-us"
-        className="min-h-screen pt-[17vh] mt-[6vh] bg-sky-50 "
+        className="min-h-screen pt-[17vh] mt-[6vh] bg-sky-50"
       >
         <AboutUs />
       </section>
 
-      <section id="services" className="min-h-screen bg-white pt-[17vh] ">
+      <section id="services" className="min-h-screen bg-white pt-[17vh]">
         <Services />
       </section>
 
@@ -172,7 +245,6 @@ const App = () => {
 
               <div className="mt-4">
                 <h4 className="font-bold mb-2">Follow Us</h4>
-
                 <div className="flex space-x-4">
                   <FaFacebook />
                   <FaXTwitter />
@@ -208,46 +280,27 @@ const App = () => {
               </ul>
             </div>
           </div>
-
           <div className="border-t border-gray-200 pt-4 text-center text-sm">
             <p>&copy; 2024 YaLabs Solutions Pvt. Ltd. All rights reserved.</p>
           </div>
         </div>
       </footer>
 
-     
-      {/* <div
-      className="h-12 w-12 bg-white flex items-center justify-center rounded-full fixed bottom-5 right-5 shadow-lg drop-shadow-lg"
-      onClick={scrollToTop}
-      >
-      <FaChevronUp
-        style={{
-          transform: `translateY(-${offset}px)`,
-          transition: "transform 50ms ease-in-out", 
-        }}
-        className="text-2xl text-sky-600"
-      />
-      </div> */}
-
-
-
       <div
-      className={`${
-        isVisible ? "block" : "hidden"
-      } h-12 w-12 bg-white flex items-center justify-center rounded-full fixed bottom-5 right-5 shadow-lg drop-shadow-lg`}
-      onClick={scrollToTop}
+        className={`${
+          isVisible ? "block" : "hidden"
+        } h-12 w-12 bg-white flex items-center justify-center rounded-full fixed bottom-5 right-5 shadow-lg drop-shadow-lg`}
+        onClick={scrollToTop}
       >
-      <FaChevronUp
-        ref={iconRef}
-        style={{
-          transform: `translateY(-${offset}px)`,
-          transition: "transform 50ms ease-in-out",
-        }}
-        className="text-2xl text-sky-600"
-      />
+        <FaChevronUp
+          ref={iconRef}
+          style={{
+            transform: `translateY(-${offset}px)`,
+            transition: "transform 50ms ease-in-out",
+          }}
+          className="text-2xl text-sky-600"
+        />
       </div>
-
-      
     </div>
   );
 };

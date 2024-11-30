@@ -210,84 +210,39 @@ const Services = () => {
         </p>
       </div>
 
-      {/* <div className="flex flex-col items-center gap-10">
-  <div className="flex flex-col gap-10">
-    <div className='flex flex-col items-center' >
-      <CiSettings className="text-blue-500 text-4xl" />
-      <span className="ml-2">Design & Planning</span>
-    </div>
-    <div className='flex flex-col items-center' >
-      <CiSettings className="text-blue-500 text-4xl" />
-      <span className="mr-2">Prototype</span>
-    </div>
-    <div className='flex flex-col items-center' >
-      <CiSettings className="text-blue-500 text-4xl" />
-      <span className="ml-2">Development</span>
-    </div>
-    <div className='flex flex-col items-center' >
-      <CiSettings className="text-blue-500 text-4xl" />
-      <span className="mr-2">Testing</span>
-    </div>
-    <div className='flex flex-col items-center' >
-      <CiSettings className="text-blue-500 text-4xl" />
-      <span className="ml-2">Deployment</span>
-    </div>
-    <div className='flex flex-col items-center' >
-      <CiSettings className="text-blue-500 text-4xl" />
-      <span className="mr-2">Maintenance</span>
-    </div>
-  </div>
-</div> */}
+      <div className="flex flex-col items-center gap-6 p-6 md:p-10 rounded-lg ">
+        <div className="flex flex-col gap-4">
+          {[
+            { title: "Design & Planning", delay: 0 },
+            { title: "Prototype", delay: 200 },
+            { title: "Development", delay: 400 },
+            { title: "Testing", delay: 600 },
+            { title: "Deployment", delay: 800 },
+            { title: "Maintenance", delay: 1000 },
+          ].map((item, index) => (
+            <React.Fragment key={index}>
+              <div
+                data-aos="fade-up"
+                data-aos-delay={item.delay}
+                className="flex relative gap-5"
+              >
+                <div className="flex items-center justify-center w-12 h-12 bg-sky-600 text-white rounded-full">
+                  <CiSettings className="text-2xl" />
+                </div>
 
-      <div className="flex flex-col items-center gap-10">
-        <div className="flex flex-col gap-10">
-          <div
-            data-aos="fade-up"
-            className="flex items-center gap-2 pb-4 border-b-4 border-sky-600"
-          >
-            <CiSettings className="text-blue-500 text-4xl" />
-            <span>Design & Planning</span>
-          </div>
-          <div
-            data-aos="fade-up"
-            data-aos-duration="600"
-            className="flex items-center gap-2 pb-4 border-b-4 border-sky-600"
-          >
-            <CiSettings className="text-blue-500 text-4xl" />
-            <span>Prototype</span>
-          </div>
-          <div
-            data-aos="fade-up"
-            data-aos-duration="800"
-            className="flex items-center gap-2 pb-4 border-b-4 border-sky-600"
-          >
-            <CiSettings className="text-blue-500 text-4xl" />
-            <span>Development</span>
-          </div>
-          <div
-            data-aos="fade-up"
-            data-aos-duration="1200"
-            className="flex items-center gap-2 pb-4 border-b-4 border-sky-600"
-          >
-            <CiSettings className="text-blue-500 text-4xl" />
-            <span>Testing</span>
-          </div>
-          <div
-            data-aos="fade-up"
-            data-aos-duration="1600"
-            className="flex items-center gap-2 pb-4 border-b-4 border-sky-600"
-          >
-            <CiSettings className="text-blue-500 text-4xl" />
-            <span>Deployment</span>
-          </div>
-          <div
-            data-aos="fade-up"
-            data-aos-duration="2000"
-            className="flex items-center gap-2 pb-4 border-b-4 border-sky-600"
-          >
-            <CiSettings className="text-blue-500 text-4xl" />
-            <span>Maintenance</span>
-          </div>
+                <span className="text-lg font-semibold text-gray-700 flex items-center">
+                  {item.title}
+                </span>
+
+                {index < 5 && (
+                  <div
+                    className="absolute left-6 top-12 w-0.5 h-16 bg-sky-600"
+                    data-aos="fade-up"
+                  ></div>
+                )}
+              </div>
+            </React.Fragment>
+          ))}
         </div>
       </div>
     </div>

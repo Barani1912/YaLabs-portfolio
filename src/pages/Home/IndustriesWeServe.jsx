@@ -18,17 +18,17 @@ const IndustriesWeServe = () => {
           },
         }}
       >
-        <Paper data-aos="fade-up" className="flex items-center" elevation={3}>
+        <Paper data-aos="fade-up" className="flex items-center " elevation={3}>
           <img
-            className="w-12 mx-10"
+            className="w-12 mx-9"
             src="https://www.svgrepo.com/show/250771/ecommerce.svg"
             alt="ecommerce logo"
           />
-          <span>E-Commerce</span>
+          <span >Ecommerce</span>
         </Paper>
         <Paper data-aos="fade-up" className="flex items-center" elevation={3}>
           <img
-            className="w-12 mx-10"
+            className="w-12 mx-9"
             src="https://www.svgrepo.com/show/443633/education-cap.svg"
             alt="ecommerce logo"
           />
@@ -36,7 +36,7 @@ const IndustriesWeServe = () => {
         </Paper>
         <Paper data-aos="fade-up" className="flex items-center" elevation={3}>
           <img
-            className="w-12 mx-10"
+            className="w-12 mx-9"
             src="https://www.svgrepo.com/show/214460/health-care-accident.svg"
             alt="ecommerce logo"
           />
@@ -50,7 +50,7 @@ const IndustriesWeServe = () => {
           elevation={3}
         >
           <img
-            className="w-12 mx-10"
+            className="w-12 mx-9"
             src="https://www.svgrepo.com/show/25989/real-estate.svg"
             alt="ecommerce logo"
           />
@@ -63,7 +63,7 @@ const IndustriesWeServe = () => {
           elevation={3}
         >
           <img
-            className="w-12 mx-10"
+            className="w-12 mx-9"
             src="https://www.svgrepo.com/show/417170/travel-holiday-vacation-28.svg"
             alt="ecommerce logo"
           />
@@ -76,7 +76,7 @@ const IndustriesWeServe = () => {
           elevation={3}
         >
           <img
-            className="w-12 mx-10"
+            className="w-12 mx-9"
             src="https://cdn-icons-png.flaticon.com/512/11779/11779191.png"
             alt="ecommerce logo"
           />
@@ -90,7 +90,7 @@ const IndustriesWeServe = () => {
           elevation={3}
         >
           <img
-            className="w-12 mx-10"
+            className="w-12 mx-9"
             src="https://www.svgrepo.com/show/501826/shop.svg"
             alt="ecommerce logo"
           />
@@ -103,7 +103,7 @@ const IndustriesWeServe = () => {
           elevation={3}
         >
           <img
-            className="w-12 mx-10"
+            className="w-12 mx-9"
             src="https://cdn.iconscout.com/icon/premium/png-256-thumb/ngo-7506265-6246298.png?f=webp&w=256"
             alt="ecommerce logo"
           />
@@ -116,11 +116,11 @@ const IndustriesWeServe = () => {
           elevation={3}
         >
           <img
-            className="w-12 mx-10"
+            className="w-12 mx-7 lg:mx-10"
             src="https://www.svgrepo.com/show/501835/tv.svg"
             alt="ecommerce logo"
           />
-          <span>Media and Entertainment</span>
+          <span> Entertainment</span>
         </Paper>
 
         <Paper
@@ -130,11 +130,11 @@ const IndustriesWeServe = () => {
           elevation={3}
         >
           <img
-            className="w-12 mx-10"
+            className="w-12 mx-9"
             src="https://www.svgrepo.com/show/341462/technology-digital-transformation-machinery-engineering-industry.svg"
             alt="ecommerce logo"
           />
-          <span>Technology and Startups</span>
+          <span>Technology</span>
         </Paper>
         <Paper
           data-aos="fade-up"
@@ -143,7 +143,7 @@ const IndustriesWeServe = () => {
           elevation={3}
         >
           <img
-            className="w-12 mx-10"
+            className="w-12 mx-9"
             src="https://www.svgrepo.com/show/291508/technology-idea.svg"
             alt="ecommerce logo"
           />
