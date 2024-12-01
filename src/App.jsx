@@ -3,8 +3,8 @@ import React, { useEffect, useState, useRef } from "react";
 
 import { HiMenu } from "react-icons/hi";
 import { FaChevronUp, FaTimes } from "react-icons/fa";
-import { FaFacebook } from "react-icons/fa6";
-import { FaXTwitter } from "react-icons/fa6";
+import { FaFacebook, FaXTwitter } from "react-icons/fa6";
+
 import { FaLinkedin } from "react-icons/fa";
 import { RiInstagramFill } from "react-icons/ri";
 
@@ -68,7 +68,11 @@ const App = () => {
         <nav className="fixed top-0 left-0 w-full bg-white shadow-md h-[15vh] flex items-center z-50">
           <div className="container mx-auto flex justify-between items-center px-8">
             <div className="text-xl font-bold text-gray-800">
-              YALABS SOLUTIONS
+              {/* <img width={"200px"} src={logo} alt="" /> */}
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#00b3de] to-[#0a4a83]">
+                {" "}
+                YALABS SOLUTIONS
+              </span>
             </div>
 
             <div className="hidden lg:flex gap-10">
@@ -133,7 +137,7 @@ const App = () => {
           className="fixed top-0 left-0 w-full h-full bg-white z-50 flex justify-center items-center"
           style={{ zIndex: 999 }}
         >
-          <div className="w-9/12 h-9/12 bg-gray-100 shadow-lg rounded-md relative">
+          <div className="w-9/12 h-9/12 bg-sky-50 shadow-lg rounded-md relative">
             <div
               className="absolute top-4 right-4 cursor-pointer"
               onClick={toggleDrawer}
@@ -197,7 +201,6 @@ const App = () => {
 
       <section id="home" className="min-h-screen bg-white pt-[17vh] mt-[6vh]">
         <Home />
-        <Cursor />
       </section>
 
       <section
@@ -207,16 +210,22 @@ const App = () => {
         <AboutUs />
       </section>
 
-      <section id="services" className="min-h-screen bg-white pt-[17vh]">
+      <section
+        id="services"
+        className="min-h-screen bg-white mt-[6vh] pt-[17vh]"
+      >
         <Services />
       </section>
 
-      <section id="contact-us" className="min-h-screen bg-sky-50 pt-[17vh]">
+      <section
+        id="contact-us"
+        className="min-h-screen bg-sky-50 mt-[6vh] pt-[17vh]"
+      >
         <Contact />
       </section>
 
-      <footer className="bg-sky-600 text-white py-10">
-        <div className="container mx-auto px-6 lg:px-20">
+      <footer className="bg-sky-600 text-white py-10 ">
+        <div className="container mx-auto px-6 lg:px-20 z-50 ">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
             <div>
               <h3 className="font-bold text-xl mb-4">Company Address</h3>
@@ -286,10 +295,12 @@ const App = () => {
         </div>
       </footer>
 
+      <Cursor />
+
       <div
         className={`${
           isVisible ? "block" : "hidden"
-        } h-12 w-12 bg-white flex items-center justify-center rounded-full fixed bottom-5 right-5 shadow-lg drop-shadow-lg`}
+        } h-12 w-12 bg-white flex items-center justify-center rounded-full fixed bottom-5 right-5 shadow-lg drop-shadow-lg cursor-pointer`}
         onClick={scrollToTop}
       >
         <FaChevronUp
